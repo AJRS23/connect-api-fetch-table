@@ -21,7 +21,7 @@ function bindButtons() {
       docHead.innerHTML = ""
       docBod.innerHTML = "";    //Reload body
       f++;    //Increase page
-      
+
       loadBody(docHead,docBod,f);
 
       if(f==2){
@@ -143,7 +143,8 @@ function loadJson(tBody , f){
                   var movie = createNode('li');
                   movie.textContent = newResponse.title;
                   movieList.appendChild(movie);
-                });
+                })
+                .catch(err => console.error(err));
             })(e); //Close
           }
         }
@@ -154,6 +155,7 @@ function loadJson(tBody , f){
     }
 
   })
+  .catch(err => console.error(err));
 
 }
 
